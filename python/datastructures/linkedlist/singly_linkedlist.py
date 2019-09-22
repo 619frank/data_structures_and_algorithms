@@ -78,7 +78,7 @@ class SinglyLinkedList:
         while counter < index:
             node = node.next
             counter += 1
-        return node.value
+        return node
 
     def set(self, index, value):
         if index < 0 or index > self.length:
@@ -95,6 +95,24 @@ class SinglyLinkedList:
         if index < 0 or index > self.length:
             return False
 
+        if index == 0:
+            self.unshift(value)
+            return True
+
+        if index == self.length:
+            self.push(value)
+            return True
+
+        newNode = Node(value)
+
+        prev = self.get(index-1)
+        current = prev.next
+
+        prev.next = newNode
+        newNode.next = current
+
+        return True
+
 
 sll = SinglyLinkedList()
 
@@ -105,5 +123,6 @@ sll.push(2)
 sll.push(3)
 # print(sll.shift())
 sll.unshift(10)
-print(sll.get(2))
+print(sll.insert(2, 33))
+# print(sll.get(2))
 print(json.dumps(sll, default=lambda obj: vars(obj),  indent=2))
