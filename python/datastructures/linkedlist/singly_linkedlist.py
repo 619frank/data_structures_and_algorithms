@@ -24,7 +24,8 @@ class SinglyLinkedList:
         else:
             self.tail.next = node
             self.tail = node
-            self.length += 1
+
+        self.length += 1
 
     def pop(self):
         if self.head is None:
@@ -113,6 +114,25 @@ class SinglyLinkedList:
 
         return True
 
+    def remove(self, index):
+        if index < 0 or index > self.length:
+            return False
+
+        if index == 1:
+            self.shift()
+            return True
+
+        if index == self.length - 1:
+            self.pop()
+            return True
+
+        priorToRemove = self.get(index - 1)
+        remaining = priorToRemove.next.next
+        priorToRemove.next = remaining
+
+        self.length -= self.length
+        return True
+
 
 sll = SinglyLinkedList()
 
@@ -124,5 +144,6 @@ sll.push(3)
 # print(sll.shift())
 sll.unshift(10)
 print(sll.insert(2, 33))
+sll.remove(5)
 # print(sll.get(2))
 print(json.dumps(sll, default=lambda obj: vars(obj),  indent=2))
