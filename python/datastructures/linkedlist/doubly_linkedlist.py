@@ -101,9 +101,9 @@ class DoublyLinkedList:
 
         if index > middle:
             current = self.tail
-            count = self.length - 1
+            count = self.length
             while count > index:
-                count += 1
+                count -= 1
                 current = current.prev
             return current
 
