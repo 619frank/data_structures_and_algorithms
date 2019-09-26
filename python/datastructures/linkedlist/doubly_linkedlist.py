@@ -107,6 +107,40 @@ class DoublyLinkedList:
                 current = current.prev
             return current
 
+    def set(self, index, value):
+
+        if index < 0 or index > self.length:
+            return False
+
+        node = self.get(index)
+
+        node.value = value
+
+        return True
+
+    def insert(self, index, value):
+        if index < 0 or index > self.length:
+            return False
+        if index == 1:
+            self.unshift(value)
+            return True
+        if index == self.length:
+            self.push(value)
+            return True
+        node = Node(value)
+        addNext = self.get(index - 1)
+        temp = addNext.next
+        addNext.next = node
+        node.prev = addNext
+        node.next = temp
+
+        self.length += 1
+        return True
+
+    def remove(self, index):
+        if index < 0 or index > self.length:
+            return False
+
 
 dll = DoublyLinkedList()
 dll.push(1)
@@ -115,6 +149,7 @@ dll.push(3)
 dll.push(4)
 dll.push(5)
 print(dll.head.value)
+dll.insert(2, 'insert')
 print(dll.head.prev)
 print(dll.head.next.value)
 print(dll.head.next.next.value)
@@ -123,6 +158,9 @@ print(dll.tail.value)
 print(dll.tail.prev.value)
 print(dll.tail.next)
 dll.unshift(6)
+dll.insert(1, 7)
 # print(vars(dll))
-# print(jsonpickle.encode(dll))
-print(dll.get(4).value)
+print(jsonpickle.encode(dll))
+# print(dll.get(6).value)
+dll.set(6, 6)
+print(dll.get(6).value)
