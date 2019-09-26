@@ -140,6 +140,16 @@ class DoublyLinkedList:
     def remove(self, index):
         if index < 0 or index > self.length:
             return False
+        if index == 1:
+            self.shift()
+            return True
+        if index == self.length:
+            self.pop()
+            return True
+        removeNode = self.get(index - 1)
+        temp = removeNode.next.next
+        removeNode.next = temp
+        return True
 
 
 dll = DoublyLinkedList()
@@ -158,9 +168,7 @@ print(dll.tail.value)
 print(dll.tail.prev.value)
 print(dll.tail.next)
 dll.unshift(6)
-dll.insert(1, 7)
-# print(vars(dll))
+dll.remove(3)
 print(jsonpickle.encode(dll))
-# print(dll.get(6).value)
 dll.set(6, 6)
 print(dll.get(6).value)
