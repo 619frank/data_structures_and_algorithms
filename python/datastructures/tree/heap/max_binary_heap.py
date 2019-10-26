@@ -61,11 +61,11 @@ class MaxBinaryHeap:
                         swap is None and self.values[rightChildIdx] >
                         self.values[parent]
                     )
-                        or
-                        (
-                            swap is not None and self.values[rightChildIdx] >
+                    or
+                    (
+                        swap is not None and self.values[rightChildIdx] >
                         self.leftChildIdx[parent])
-                        ):
+                   ):
                     swap = rightChildIdx
 
             if swap is None:
