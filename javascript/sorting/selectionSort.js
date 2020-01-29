@@ -6,7 +6,8 @@ function selectionSort(arr){
                 lowest = j
             }
         }
-        [arr[lowest],arr[i]] = [arr[i],arr[lowest]]
+        if(i !== lowest)
+            [arr[lowest],arr[i]] = [arr[i],arr[lowest]]
     }
     return arr
 }
