@@ -18,8 +18,8 @@ Constraints:
 1 <= s.length <= 1000  
 s consist of only digits and English letters.  
 
-Hint:
-There are three ways to solve it
-1. O(n3) -> for each of all the substring see if its palindrome or not
-2. O(n2) -> Expand From middle Approach
-3. O(n) -> Manacher's Algorithm -> Very hard
+Hint:  
+There are three ways to solve it  
+1. O(n3) -> for each of all the substring see if its palindrome or not  
+2. O(n2) -> Expand From middle Approach -> Check Nick White's video  
+3. O(n) -> Manacher's Algorithm -> Very hard  
