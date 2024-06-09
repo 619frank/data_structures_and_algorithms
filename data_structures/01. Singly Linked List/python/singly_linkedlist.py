@@ -133,6 +133,28 @@ class SinglyLinkedList:
         self.length -= self.length
         return True
 
+    def traverse(self):
+        current = self.head
+        while current is not None:
+            print(current.value)
+            current = current.next
+
+
+    def reverse(self):
+        if self.head is None or self.head.next is None:
+            return
+        
+        current = self.head
+        self.tail = self.head
+        tail = None
+        while current is not None:
+            next = current.next # next = 2, 3, 4, None 
+            current.next = tail # current = 1, None 
+            tail = current # tail = 1, None 
+            current = next # current = 2, 3, 4, None 
+
+        self.head = tail  # Update the head to the new first node
+        self.tail.next = None  # Ensure the new tail's next is None
 
 sll = SinglyLinkedList()
 
@@ -141,9 +163,9 @@ sll.push(1)
 sll.push(2)
 
 sll.push(3)
-# print(sll.shift())
-sll.unshift(10)
-print(sll.insert(2, 33))
-sll.remove(5)
-# print(sll.get(2))
-print(json.dumps(sll, default=lambda obj: vars(obj),  indent=2))
+sll.push(4)
+sll.push(5)
+sll.traverse()
+sll.reverse()
+sll.traverse()
+# print(json.dumps(sll, default=lambda obj: vars(obj),  indent=2))
