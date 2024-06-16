@@ -1,3 +1,3 @@
-####Here you can find the most common datastructures and algorithms 
+#### Here you can find the most common datastructures,  algorithms and solutions for problem solving questions.
 
-I'm using javascript, python and golang. Have a look at each folder to find the files.
+I'm using Java, javascript, python and golang. 
