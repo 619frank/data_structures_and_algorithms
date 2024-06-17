@@ -66,21 +66,17 @@ class DoublyLinkedList {
     }
 
     get(index){
-       if(index < 0 || index > this.length-1) return null
-       let node = this.head
-       if(index <= this.length/2){
-            for(let i = 0; i <= this.length/2; i++){
-                if(i === index){
-                    break
-                }
+        if(index < 0 || index > this.length-1) return null
+        let node = null
+        if(index <= this.length/2){
+            node = this.head
+            for(let i = 0; i < index; i++){
                 node = node.next
             }
        }else{
-            for(let i = this.length/2; i < this.length/2; i++){
-                if(i === index){
-                    break
-                }
-                node = node.next
+            node = this.tail
+            for(let i = this.length -1; i > index; i--){
+                node = node.prev
             }
        }
        return node
