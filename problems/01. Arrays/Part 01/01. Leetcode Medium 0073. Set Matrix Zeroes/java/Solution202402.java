@@ -1,4 +1,4 @@
-class Solution {
+class Solution202402 {
     public void setZeroes(int[][] matrix) {
                 
         int rowLength = matrix.length;
