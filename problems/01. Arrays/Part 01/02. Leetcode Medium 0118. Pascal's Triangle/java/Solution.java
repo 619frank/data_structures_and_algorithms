@@ -11,7 +11,7 @@ class Solution {
         
         result.add(row1);
         
-        for(int i = 0; i < numRows -1; i++){
+        for(int i = 1; i < numRows; i++){
             List<Integer> tempList = new ArrayList<>();
             tempList.add(0);
             tempList.addAll(result.get(result.size() -1));
