@@ -1,3 +1,6 @@
+/*
+ This is also known as the Dutch National Flag problem.
+ */
 import java.util.Arrays;
 
 class Solution {

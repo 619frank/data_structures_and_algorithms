@@ -5,6 +5,7 @@ class Solution {
     public static void main(String[] args) {
         
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+        // int[] nums = {-1};
         // To print just the sum
         System.out.println(maxSubArraySum(nums));
 
