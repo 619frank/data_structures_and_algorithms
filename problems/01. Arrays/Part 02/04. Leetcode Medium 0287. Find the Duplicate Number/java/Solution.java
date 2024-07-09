@@ -1,3 +1,6 @@
+import java.util.HashSet;
+import java.util.Set;
+
 class Solution {
     public int findDuplicate(int[] nums) {
         
